@@ -1,0 +1,22 @@
+# Never commit signing material.
+*.jks
+*.keystore
+*.p12
+*.pepk
+keystore.properties
+local.properties
+
+# Build output
+.gradle/
+build/
+*/build/
+**/build/
+.kotlin/
+*.apk
+*.aab
+captures/
+
+# Editor
+.idea/
+*.iml
+.DS_Store
