@@ -25,5 +25,7 @@ throwaway debug key, which installs fine but cannot be updated in place.
 ## What is here
 
 - `apps/hello` is the starter app: one Compose screen, nothing else.
+- `apps/swappuzzle` is Swap Puzzle: match a hidden row of 4 to 9 icons by
+  swapping, told only how many are right after each swap.
 - `apps/` holds one module per app. Each one builds its own APK.
 - `CLAUDE.md` tells a Claude Code session how to add an app and cut a release.
