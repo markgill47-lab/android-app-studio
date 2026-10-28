@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- The window of the ball. -->
+    <path
+        android:fillColor="#141833"
+        android:pathData="M28,54a26,26 0 1,0 52,0a26,26 0 1,0 -52,0z" />
+    <!-- The answer face pressed against it. -->
+    <path
+        android:fillColor="#2B3FC2"
+        android:pathData="M54,36L71,65L37,65z" />
+    <path
+        android:fillColor="#E8ECFF"
+        android:pathData="M47,57h14v3h-14z" />
+    <path
+        android:fillColor="#E8ECFF"
+        android:pathData="M50,51h8v3h-8z" />
+</vector>

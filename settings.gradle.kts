@@ -25,3 +25,4 @@ rootProject.name = "android-app-studio"
 // One module per app. Add a line here when you add an app under apps/.
 include(":apps:hello")
 include(":apps:swappuzzle")
+include(":apps:eightball")
