@@ -29,6 +29,8 @@ throwaway debug key, which installs fine but cannot be updated in place.
   swapping, told only how many are right after each swap.
 - `apps/eightball` is Magic 8 Ball: a 20-sided die with the classic answers
   rises out of black fog when the screen faces up, sinks away when it faces
-  down, and tumbles to a new answer when you shake the phone or tap.
+  down, and tumbles to a new answer when you shake the phone or tap. Icons
+  at the bottom switch to a red ball of swearing and a green ball of dinner
+  ideas.
 - `apps/` holds one module per app. Each one builds its own APK.
 - `CLAUDE.md` tells a Claude Code session how to add an app and cut a release.

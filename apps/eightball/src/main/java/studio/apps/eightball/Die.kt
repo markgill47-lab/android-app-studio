@@ -50,6 +50,16 @@ class Die(private val faces: List<Face>) {
         shake = max(shake, 1f)
     }
 
+    // Pushes the die back into the fog, spinning, so another ball can take
+    // its place out of sight.
+    fun sink() {
+        depthVel = max(depthVel, 0f) + 8f
+        omega = omega + randomUnit() * 5f
+    }
+
+    // True once no part of the die can be seen through the fog.
+    val hidden get() = depth - 1f > Renderer.FOG_END
+
     private fun integrate(dt: Float, up: Vec3, linear: Vec3) {
         // Shake energy rises with every hard jolt and decays over a third of
         // a second. While it is up, the die tumbles freely.

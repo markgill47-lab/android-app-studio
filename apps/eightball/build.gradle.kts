@@ -26,8 +26,8 @@ android {
 
         // versionCode must go up for every build you install over the top of
         // an older one. versionName is what shows in Settings.
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
     }
 
     signingConfigs {

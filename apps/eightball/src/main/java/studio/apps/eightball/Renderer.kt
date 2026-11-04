@@ -15,15 +15,21 @@ import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.sqrt
 
-private const val FACE_BLUE = 0xFF2B3FC2.toInt()
-private const val EDGE_BLUE = 0xFF18247A.toInt()
 private const val TEXT_WHITE = 0xFFE8ECFF.toInt()
 
 // Draws the die into a black void with black fog. Each face is a texture of
-// a blue triangle with its answer, mapped onto the projected triangle, then
+// a colored triangle with its answer, mapped onto the projected triangle, then
 // darkened by light and by fog so the die fades into black with depth.
-class Renderer(private val faces: List<Face>) {
-    private val art: List<Bitmap> = ANSWERS.map { faceBitmap(it) }
+class Renderer(private val faces: List<Face>, initial: Ball) {
+    // Only the ball on screen keeps its face textures, about 20 MB of them.
+    var ball: Ball = initial
+        set(value) {
+            if (value == field && art.isNotEmpty()) return
+            field = value
+            art = List(20) { faceBitmap(value.answers[it % value.answers.size], value) }
+            basePaint.color = value.face
+        }
+    private var art: List<Bitmap> = emptyList()
 
     private val path = Path()
     private val matrix = Matrix()
@@ -35,10 +41,14 @@ class Renderer(private val faces: List<Face>) {
     private val dst = FloatArray(6)
     private val depthAt = FloatArray(3)
     private val dark = FloatArray(3)
-    private val basePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = FACE_BLUE }
+    private val basePaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val bitmapPaint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)
     private val shadePaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val light = Vec3(0.25f, 0.45f, 1f).normalized()
+
+    init {
+        ball = initial
+    }
 
     fun draw(canvas: Canvas, width: Float, height: Float, die: Die) {
         canvas.drawColor(Color.BLACK)
@@ -124,15 +134,15 @@ class Renderer(private val faces: List<Face>) {
         // Tight fog: the face pressed to the window is clear, the faces
         // around it dim fast, and a die a little further back is gone.
         private const val FOG_START = Die.DEPTH_MIN - 0.55f
-        private const val FOG_END = Die.DEPTH_MIN + 0.45f
+        const val FOG_END = Die.DEPTH_MIN + 0.45f
 
         private const val TEX_PAD = 8f
         private const val TEX_SIDE = 512f
         private val TEX_HEIGHT = TEX_SIDE * sqrt(3f) / 2f
 
-        // One face: a blue triangle with a darker rim and the answer in
+        // One face: a colored triangle with a darker rim and the answer in
         // white, laid out to fit inside the triangle's width at each line.
-        private fun faceBitmap(answer: String): Bitmap {
+        private fun faceBitmap(answer: String, ball: Ball): Bitmap {
             val w = ceil(TEX_SIDE + 2 * TEX_PAD).toInt()
             val h = ceil(TEX_HEIGHT + 2 * TEX_PAD).toInt()
             val bmp = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
@@ -144,9 +154,9 @@ class Renderer(private val faces: List<Face>) {
                 lineTo(TEX_PAD + TEX_SIDE, TEX_PAD + TEX_HEIGHT)
                 close()
             }
-            c.drawPath(tri, Paint(Paint.ANTI_ALIAS_FLAG).apply { color = FACE_BLUE })
+            c.drawPath(tri, Paint(Paint.ANTI_ALIAS_FLAG).apply { color = ball.face })
             c.drawPath(tri, Paint(Paint.ANTI_ALIAS_FLAG).apply {
-                color = EDGE_BLUE
+                color = ball.edge
                 style = Paint.Style.STROKE
                 strokeWidth = 14f
                 strokeJoin = Paint.Join.ROUND

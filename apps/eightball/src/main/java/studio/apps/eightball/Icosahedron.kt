@@ -58,7 +58,7 @@ object Icosahedron {
                     }
                     // Stepping by 7 deals the answers around the die, so the
                     // yes, maybe and no faces are mixed instead of clumped.
-                    faces += Face(a, b, c, (faces.size * 7) % ANSWERS.size)
+                    faces += Face(a, b, c, (faces.size * 7) % 20)
                 }
             }
         }
