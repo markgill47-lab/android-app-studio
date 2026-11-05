@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- A target reticle over the water. -->
+    <path
+        android:strokeColor="#FFB648"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:pathData="M34,54a20,20 0 1,0 40,0a20,20 0 1,0 -40,0z" />
+    <path
+        android:fillColor="#FFB648"
+        android:pathData="M52.5,28h3v12h-3z M52.5,68h3v12h-3z M28,52.5h12v3h-12z M68,52.5h12v3h-12z" />
+    <!-- The blast at its center. -->
+    <path
+        android:fillColor="#FF5B3D"
+        android:pathData="M54,42l3.5,7.5l8,-2.5l-4.5,7l7,4.5l-8,1l0.5,8l-6.5,-5l-6.5,5l0.5,-8l-8,-1l7,-4.5l-4.5,-7l8,2.5z" />
+    <path
+        android:fillColor="#FFE89A"
+        android:pathData="M49,55a5,5 0 1,0 10,0a5,5 0 1,0 -10,0z" />
+</vector>

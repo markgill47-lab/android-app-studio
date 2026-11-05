@@ -26,3 +26,4 @@ rootProject.name = "android-app-studio"
 include(":apps:hello")
 include(":apps:swappuzzle")
 include(":apps:eightball")
+include(":apps:irontide")

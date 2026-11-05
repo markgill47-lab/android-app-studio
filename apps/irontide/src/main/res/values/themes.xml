@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Night-sea blue from the first frame, so the app opens without a flash. -->
+    <style name="Theme.AppStudio" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/sea_night</item>
+        <item name="android:statusBarColor">@color/sea_night</item>
+        <item name="android:navigationBarColor">@color/sea_night</item>
+    </style>
+</resources>
