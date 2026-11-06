@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark felt green from the first frame, so the app opens without a flash. -->
+    <style name="Theme.AppStudio" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/felt_dark</item>
+        <item name="android:statusBarColor">@color/felt_dark</item>
+        <item name="android:navigationBarColor">@color/felt_dark</item>
+    </style>
+</resources>

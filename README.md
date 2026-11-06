@@ -36,5 +36,9 @@ throwaway debug key, which installs fine but cannot be updated in place.
   computer. Place five ships on your grid, then trade single shots on two
   10x10 oceans until one fleet is gone. Splashes for misses, fire for hits,
   synthesized sound, and an easy, medium or hard admiral to play against.
+- `apps/emberonyx` is Ember & Onyx: drop red ember pieces against the
+  computer's black onyx ones on a 7 by 6 walnut board, and get four in a row
+  first. Bouncing drops, a glowing winning line, synthesized sound, and an
+  easy, medium or hard opponent.
 - `apps/` holds one module per app. Each one builds its own APK.
 - `CLAUDE.md` tells a Claude Code session how to add an app and cut a release.
