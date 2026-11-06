@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Night slate from the first frame, so the app opens without a flash. -->
+    <style name="Theme.AppStudio" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/night_slate</item>
+        <item name="android:statusBarColor">@color/night_slate</item>
+        <item name="android:navigationBarColor">@color/night_slate</item>
+    </style>
+</resources>

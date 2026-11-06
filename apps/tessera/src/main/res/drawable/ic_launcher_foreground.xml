@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- An amber cross on the middle tile. -->
+    <path
+        android:strokeColor="#F4A93A"
+        android:strokeWidth="3.4"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M49.5,49.5L58.5,58.5 M58.5,49.5L49.5,58.5" />
+    <!-- Small jade rings and amber crosses on the others. -->
+    <path
+        android:strokeColor="#3CC9A2"
+        android:strokeWidth="2.6"
+        android:fillColor="#00000000"
+        android:pathData="M30,35a5,5 0 1,0 10,0a5,5 0 1,0 -10,0z M68,73a5,5 0 1,0 10,0a5,5 0 1,0 -10,0z M30,54a5,5 0 1,0 10,0a5,5 0 1,0 -10,0z" />
+    <path
+        android:strokeColor="#F4A93A"
+        android:strokeWidth="2.6"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M50,31L58,39 M58,31L50,39 M69,31L77,39 M77,31L69,39 M50,69L58,77 M58,69L50,77" />
+</vector>
